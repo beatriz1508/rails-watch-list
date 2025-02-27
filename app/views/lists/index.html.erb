@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Lists" %>
+
+<h1>Lists</h1>
+
+<div id="lists">
+  <% @lists.each do |list| %>
+    <%= render list %>
+    <p>
+     ssss
+    </p>
+  <% end %>
+</div>
