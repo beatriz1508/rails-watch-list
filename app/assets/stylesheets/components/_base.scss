@@ -1,0 +1,26 @@
+// app/assets/stylesheets/_base.scss
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$light-bg: #f7f7f7;
+$dark-text: #333;
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: $light-bg;
+  color: $dark-text;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: $dark-text;
+}

@@ -1,0 +1,12 @@
+<% content_for :title, "New list" %>
+
+<h1>New list</h1>
+
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name, placeholder: 'Drama' %>
+  <%= f.submit class: 'btn btn-flat' %>
+<% end %>
+
+<div>
+  <%= link_to "Back to lists", lists_path %>
+</div>

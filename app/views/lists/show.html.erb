@@ -1,9 +1,45 @@
-<p style="color: green"><%= notice %></p>
-<h2>Reviews:</h2>
-<%# <ul>
-  <% @list.bookmarks.each do |bookmark| %>
-    <li>
-      <%= bookmark.comment %>
-    </li> %>
-  <% end %>
-</ul>
+<div class="container mt-5">
+  <h1><%= @list.name %> List</h1>
+
+  <!-- Exibe os bookmarks e os filmes associados -->
+  <div class="row">
+    <% if @list.bookmarks.any? %>
+      <% @list.bookmarks.each do |bookmark| %>
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <% if bookmark.movie.poster_url.present? %>
+              <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.title, class: "card-img-top" %>
+            <% else %>
+              <%= image_tag "default_movie.jpg", alt: bookmark.movie.title, class: "card-img-top" %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= bookmark.movie.title %></h5>
+              <p class="card-text"><%= truncate(bookmark.movie.overview, length: 100) %></p>
+              <p class="card-text"><strong>Comment:</strong> <%= bookmark.comment %></p>
+            </div>
+            <div class="card-footer text-center">
+              <%= link_to "Remove", bookmark_path(bookmark), method: :delete,
+                          data: { confirm: "Are you sure?" },
+                          class: "btn btn-danger btn-sm" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="col-12">
+        <p>No bookmarks in this list yet.</p>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Formulário para adicionar um novo bookmark -->
+  <div class="mt-5">
+    <h2>Add a New Bookmark</h2>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.input :comment, label: "Comment", placeholder: "Write your comment..." %>
+      <div class="d-grid">
+        <%= f.button :submit, "Add Bookmark", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

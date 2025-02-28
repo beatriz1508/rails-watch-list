@@ -1,0 +1,32 @@
+// app/assets/stylesheets/_lists.scss
+
+.lists {
+  margin-top: 2rem;
+  .left-border {
+    border-left: 4px solid $primary-color;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+
+    .list-title {
+      font-size: 1.75rem;
+      color: $primary-color;
+    }
+    .click-text-content {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+    .click {
+      a.btn-click {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: $primary-color;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 0.25rem;
+        &:hover {
+          background: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+}
