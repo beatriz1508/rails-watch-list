@@ -18,9 +18,9 @@
               <p class="card-text"><strong>Comment:</strong> <%= bookmark.comment %></p>
             </div>
             <div class="card-footer text-center">
-              <%= link_to "Remove", bookmark_path(bookmark), method: :delete,
-                          data: { confirm: "Are you sure?" },
-                          class: "btn btn-danger btn-sm" %>
+              <%= button_to "Remove", bookmark_path(bookmark), method: :delete,
+              data: { confirm: "Are you sure?" },
+              class: "btn btn-danger btn-sm" %>
             </div>
           </div>
         </div>
@@ -31,6 +31,12 @@
       </div>
     <% end %>
   </div>
+    <div class="card-footer text-center">
+      <%= button_to "Remove", list_path(@list), method: :delete,
+      data: { confirm: "Are you sure?" },
+      class: "btn btn-danger btn-sm" %>
+    </div>
+
 
   <!-- Formulário para adicionar um novo bookmark -->
   <div class="mt-5">
@@ -43,3 +49,5 @@
     <% end %>
   </div>
 </div>
+
+ <%= link_to "Go Back to Home", lists_path %></p>

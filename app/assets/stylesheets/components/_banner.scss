@@ -1,49 +1,20 @@
-// app/assets/stylesheets/_banner.scss
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
 
-.banner-container {
-  background: #000;
-  color: #fff;
-  padding: 2rem 0;
-  text-align: center;
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 62px;
+  font-weight: bold;
+}
 
-  .banner-nav-bar {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-    h1 {
-      font-size: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .logo-title {
-        margin-left: 0.5rem;
-      }
-    }
-  }
-
-  .banner-info {
-    margin-top: 2rem;
-    .banner-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-    .banner-subtitle {
-      font-size: 1.25rem;
-      margin-top: 0.5rem;
-    }
-    .btn-infos {
-      margin-top: 1rem;
-      .btn-more-info {
-        a {
-          color: #fff;
-          background: $primary-color;
-          padding: 0.5rem 1rem;
-          border-radius: 0.25rem;
-          text-decoration: none;
-          &:hover {
-            background: darken($primary-color, 10%);
-          }
-        }
-      }
-    }
-  }
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }

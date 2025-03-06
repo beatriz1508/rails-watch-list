@@ -1,8 +1,8 @@
 class List < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :movies, through: :bookmarks
-  #has_one_attached :photo
+  has_one_attached :photo
 
-  validates :name, presence: true
+  validates :name, :description, :photo, presence: true
   validates :name, uniqueness: true
 end

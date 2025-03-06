@@ -1,46 +1,32 @@
-<%# app/views/lists/index.html.erb %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://external-preview.redd.it/WlA-GxT3IsWZjPci_ve67_P-vloOa3hbUgv_iicqzuI.jpg?width=1080&crop=smart&auto=webp&s=55f91c2202c6f0b4df58ba9d3057178f3e2c76cc);">
+  <div class="container">
+    <h1>Watch list</h1>
+    <p>manage your movies and unleash your inner film critic!</p>
+     <%= link_to "create a new list", new_list_path, class: "btn text-white", style: "background-color: #A67B5B; border-color: #A67B5B;" %>
 
-<div class="banner-container">
-  <div class="banner-nav-bar">
-    <div>
-      <h1>
-        <i class="fas fa-play"></i>
-        <span class="logo-title">Watch List</span>
-      </h1>
-    </div>
-  </div>
-  <div class="banner-info">
-    <div>
-      <p class="banner-title">Welcome to Watch List</p>
-      <p class="banner-subtitle">Discover and manage your movie lists</p>
-      <div class="btn-infos">
-        <div class="btn-more-info">
-          <%= link_to "Create a New List", new_list_path, class: "btn btn-primary" %>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
 <div class="container mt-5">
-  <div class="lists">
-    <h2>My Lists</h2>
+  <div class="row">
     <% if @lists.any? %>
       <% @lists.each do |list| %>
-        <div class="left-border">
-          <div class="col-lg-6">
-            <h3 class="list-title"><%= list.name %> List</h3>
-            <p class="click-text-content">
-              Explore your list and add more movies.
-            </p>
-            <span class="click">
-              <%= link_to "View List", list_path(list), class: "btn-click" %>
-            </span>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="list-title"><%= list.name %> List</h3>
+              <p class="click-text-content">
+                Explore your list and add more movies.
+              </p>
+              <%= link_to "view list", list_path(list), class: "btn btn-vintage", style: "background-color: #966E52; border-color: #966E52; color: #ffffff;" %>
+            </div>
           </div>
         </div>
       <% end %>
     <% else %>
-      <p>No lists found. <%= link_to "Create one", new_list_path %></p>
+      <div class="col">
+        <p>No lists found. <%= link_to "Create one", new_list_path %></p>
+      </div>
     <% end %>
   </div>
 </div>
